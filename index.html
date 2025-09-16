@@ -14,25 +14,47 @@
     />
   </head>
   <body>
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
+
     <header class="bg-white shadow-sm">
       <div
         class="container max-w-[1200px] mx-auto px-4 flex items-center justify-between py-4"
       >
         <!-- Logo -->
         <div class="flex items-center space-x-2">
-          <img src="./img/logo.svg" alt="Arshin Tech" class="h-" />
+          <a href="#">
+            <img src="./img/logo.svg" alt="Arshin Tech" class="h-8" />
+          </a>
         </div>
 
         <!-- Desktop Nav -->
         <nav class="hidden md:flex items-center space-x-6">
-          <a href="#" class="text-gray-700 font-medium">Услуги</a>
-          <a href="#" class="text-gray-700 font-medium">Схема работы</a>
-          <a href="#" class="text-gray-700 font-medium">Контакты</a>
+          <a
+            href="#"
+            class="text-gray-700 font-medium hover:text-blue-600 hover:underline transition"
+            >Услуги</a
+          >
+          <a
+            href="#"
+            class="text-gray-700 font-medium hover:text-blue-600 hover:underline transition"
+            >Схема работы</a
+          >
+          <a
+            href="#"
+            class="text-gray-700 font-medium hover:text-blue-600 hover:underline transition"
+            >Контакты</a
+          >
         </nav>
 
         <!-- Phone Number -->
         <div class="hidden md:block">
-          <a href="tel:+78432532281" class="font-semibold text-gray-900"
+          <a
+            href="tel:+78432532281"
+            class="font-semibold text-gray-900 hover:text-blue-600 transition"
             >+7 (843) 253-22-81</a
           >
         </div>
@@ -58,12 +80,17 @@
       </div>
     </header>
 
+    <!-- HERO SECTION -->
     <section class="bg-gray-50">
       <div
         class="container max-w-[1200px] mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-center"
       >
         <div class="space-y-6">
-          <div class="bg-white p-6 rounded-2xl shadow max-w-lg space-y-4">
+          <!-- White card -->
+          <div
+            class="bg-white p-6 rounded-2xl shadow max-w-lg space-y-4 opacity-0 animate-fadeDown"
+          >
+            <!-- Badge-lar -->
             <div class="flex space-x-3">
               <span
                 class="bg-gray-100 text-gray-700 text-sm px-4 py-1 rounded-full flex items-center"
@@ -77,18 +104,21 @@
               </span>
             </div>
 
+            <!-- Title -->
             <h1 class="text-3xl md:text-4xl font-bold leading-snug">
               Установка и продажа <br />
               систем видеонаблюдения
             </h1>
 
+            <!-- Subtitle -->
             <p class="text-gray-600">
               Понятным языком объясняем технические термины
             </p>
           </div>
 
+          <!-- Blue card -->
           <div
-            class="bg-[#8DA5C5] text-white p-6 rounded-2xl space-y-4 max-w-lg"
+            class="bg-[#8DA5C5] text-white p-6 rounded-2xl space-y-4 max-w-lg opacity-0 animate-fadeDown animation-delay-300"
           >
             <h2 class="text-xl font-bold">ARSHIN TECH</h2>
             <p class="text-sm leading-relaxed">
@@ -103,19 +133,42 @@
               Оставить заявку
               <i class="fas fa-arrow-right ml-2 text-blue-900"></i>
             </a>
-            <!-- button iconi ishlamadi -->
           </div>
         </div>
 
+        <!-- O‘ng taraf (rasm) -->
         <div class="flex justify-center">
           <img
             src="./img/camera.png"
             alt="Camera"
-            class="max-w-full md:max-w-sm"
+            class="max-w-full md:max-w-sm opacity-0 animate-fadeDown animation-delay-500"
           />
         </div>
       </div>
     </section>
+
+    <!-- Custom animation styles -->
+    <style>
+      @keyframes fadeDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fadeDown {
+        animation: fadeDown 0.8s ease-out forwards;
+      }
+      .animation-delay-300 {
+        animation-delay: 0.3s;
+      }
+      .animation-delay-500 {
+        animation-delay: 0.5s;
+      }
+    </style>
 
     <script src="./main.js">
       const menuBtn = document.getElementById("menu-btn");
